@@ -1,0 +1,41 @@
+header img{
+    width: 200px;
+}
+
+.heroBurger{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.menuNavigation{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-inline: 112px;
+    font-size: 32px;
+    gap: 48px;
+    color: black;
+    font-weight: bold;
+}
+
+.menuNavigation a{
+    color: black;
+}
+
+footer img{
+    width: 72px;
+    border: 1px solid white;
+    border-radius: 16px;
+}
+
+footer div{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+footer a{
+    color: white;
+}
