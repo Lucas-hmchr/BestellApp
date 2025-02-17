@@ -1,15 +1,15 @@
-header img{
+header img {
     width: 200px;
 }
 
-.heroBurger{
+.heroBurger {
     height: 400px;
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
 }
 
-.menuNavigation{
+.menuNavigation {
     height: 80px;
     display: flex;
     align-items: center;
@@ -20,22 +20,102 @@ header img{
     font-weight: bold;
 }
 
-.menuNavigation a{
+.menuNavigation a {
     color: black;
 }
 
-footer img{
+.menuSelection {
+    padding-inline: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.menuItems{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.menuItem {
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 16px;
+    color: white;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuItem div {
+    flex: 1;
+}
+
+.menuItem div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.menuItem div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.itemPrice{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.menuItem button {
+    aspect-ratio: 1/1;
+    width: 56px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.699);
+    transition: 0.1s ease-in-out;
+}
+
+.menuItem button:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.075);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.699);
+}
+
+.menuItem button img {
+    width: 70%;
+}
+
+
+/* shoppingCart */
+.calculationContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+footer img {
     width: 72px;
     border: 1px solid white;
     border-radius: 16px;
 }
 
-footer div{
+footer div {
     display: flex;
     align-items: center;
     gap: 24px;
 }
 
-footer a{
+footer a {
     color: white;
 }

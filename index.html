@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,48 +9,54 @@
     <link rel="stylesheet" href="./styles/layout.css">
     <link rel="stylesheet" href="./styles/content.css">
     <link rel="icon" type="image/x-icon" href="./assets/icons/favicons/favicon.ico">
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/template.js"></script>
 </head>
-<body>
+
+<body onload="renderMenu()">
     <header>
         <img src="./assets/icons/Bestell App- Logo.svg" alt="">
     </header>
 
     <main>
         <section class="menuSection" id="menuSection">
-            <img src="./assets/images/hero_burger.jpg" alt="" class="heroBurger">
-            <nav class="menuNavigation">
-                <a href="">Burger</a>
-                <a href="">Beilagen</a>
-                <a href="">Getränke</a>
+            <img src="./assets/images/big_texas_burger.jpg" alt="" class="heroBurger">
+            <nav class="menuNavigation" id="menuNavigation">
+
             </nav>
-            <section>
-                <h2>Burger</h2>
-            </section>
+            <div class="menuSelection" id="menuSelection">
 
-            <section>
-                <h2>Beilagen</h2>
-            </section>
-
-            <section>
-                <h2>Werbung</h2>
-            </section>
-
-            <section>
-                <h2>Getränke</h2>
-            </section>
+            </div>
         </section>
 
         <section class="shoppingCart" id="shoppingCart">
+            <h2>Warenkorb</h2>
+            <div>
 
+            </div>
+            <div>
+                <div>
+                    <div class="calculationContainer">
+                        <span>Zwischensumme</span><span>20,99€</span><br>
+                        <span>Lieferkosten</span><span>20,99€</span><br>
+                        <hr>
+                        <span>Zwischensumme</span><span>20,99€</span><br>
+                    </div>
+                </div>
+
+                <button id="payButton" class="payButton">Bezahlen</button>
+            </div>
         </section>
     </main>
 
     <footer>
         <img src="./assets/icons/favicons/android-chrome-512x512.png" alt="">
         <div>
-            <a href="">Impressum</a> 
-            <a href="">Datenschutz</a> 
+            <a href="">Impressum</a>
+            <a href="">Datenschutz</a>
         </div>
     </footer>
 </body>
+
 </html>
