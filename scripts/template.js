@@ -15,7 +15,7 @@ function menuItemTemplate(item) {
         </div>
         <div>
             <span class="itemPrice" id="itemPrice${item.name}">${item.price}€</span>
-            <button type="button"><img src="./assets/icons/plus_icon.svg" alt=""></button>
+            <button type="button" onclick="addOneToCart(${item.id}, '${item.category}')"><img src="./assets/icons/plus_icon.svg" alt=""></button>
         </div>
     </div>
     `
@@ -26,3 +26,27 @@ function menuNavigationTemplate(element){
         <a href="#${element.category}" class="menuNavigationItem">${element.category}</a>
     `
 };
+
+function shoppingCartTemplate(item){
+    return `
+        <div class="orderListItem" id="orderListItem${item.id}">
+            <div class="orderListItemTopContainer">
+                <img src="./assets/icons/${item.icon}" alt="">
+                <div class="orderListItemInfos">
+                    <span>${item.name}</span>
+                    <span class="singleItemPrice">${item.price}€</span>
+                </div>
+                <button class="deleteButton" onclick="deleteCartItem(${item.id})"><img src="./assets/icons/trashcan.svg" alt=""></button>
+            </div>
+            <div class="orderListItemBottomContainer">
+                <div class="orderItemAmount">
+                    <button onclick="removeOneFromCart(${item.id},'${item.category}')">-</button>
+                    <span id="amount${item.id}">${item.amount}</span>
+                    <button onclick="addOneToCart(${item.id},'${item.category}')">+</button>
+                </div>
+                <span class="totalItemPrice" id="itemSum${item.id}">${item.price * item.amount}€</span>
+            </div>
+            <hr>
+        </div>
+    `
+}

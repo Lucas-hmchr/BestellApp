@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/layout.css">
     <link rel="stylesheet" href="./styles/content.css">
+    <link rel="stylesheet" href="./styles/shoppingCart.css">
     <link rel="icon" type="image/x-icon" href="./assets/icons/favicons/favicon.ico">
     <script src="./scripts/db.js"></script>
     <script src="./scripts/script.js"></script>
@@ -16,10 +17,11 @@
 
 <body onload="renderMenu()">
     <header>
-        <img src="./assets/icons/Bestell App- Logo.svg" alt="">
+        <a href="./index.html"><img href="./index.html" src="./assets/icons/Bestell App- Logo.svg" alt=""></a>
     </header>
 
     <main>
+        <img src="./assets/icons/basket.svg" alt="" class="mobileCartIcon" onclick="openCart()">
         <section class="menuSection" id="menuSection">
             <img src="./assets/images/big_texas_burger.jpg" alt="" class="heroBurger">
             <nav class="menuNavigation" id="menuNavigation">
@@ -31,21 +33,36 @@
         </section>
 
         <section class="shoppingCart" id="shoppingCart">
-            <h2>Warenkorb</h2>
-            <div>
+            <div class="cartHeader">
+                <h2>Warenkorb</h2>
+                <img src="./assets/icons/basket_orange.svg" alt="" onclick="openCart()">
+            </div>
+            <div class="orderList" id="orderList">
 
             </div>
-            <div>
-                <div>
-                    <div class="calculationContainer">
-                        <span>Zwischensumme</span><span>20,99€</span><br>
-                        <span>Lieferkosten</span><span>20,99€</span><br>
-                        <hr>
-                        <span>Zwischensumme</span><span>20,99€</span><br>
-                    </div>
-                </div>
 
-                <button id="payButton" class="payButton">Bezahlen</button>
+            <div class="shoppingCartBottomSection">
+                <div class="deliveryToggle" id="deliveryToggle">
+                    <input id="deliveryCheckbox" type="checkbox" oninput="toggleDeliveryFee()">
+                    <label for="deliveryCheckbox">Essen abholen kommen?</label>
+                </div>
+                <div class="calculationContainer">
+                    <div class="priceSum"><span>Zwischensumme</span><span id="totalItemCost"></span></div>
+                    <div class="priceSum" id="deliveryFee"><span>Lieferkosten</span><span id="deliveryFeeCosts"></span>
+                    </div>
+                    <hr>
+                    <div class="priceSum"><span>Gesamtsumme</span><span id="totalSum"></span></div>
+                </div>
+                <button id="payButton" class="payButton" onclick="placeOrder()"><img src="./assets/icons/payIcon.svg"
+                        alt="">Jetzt
+                    bestellen</button>
+            </div>
+        </section>
+
+        <section class="orderConfirmation" id="orderConfirmation">
+            <div>
+                <h1>Bestellung wurde erfolgreich abgesendet</h1>
+                <button onclick="placeOrder()"><img src="./assets/icons/favicons/android-chrome-512x512.png" alt=""></button>
             </div>
         </section>
     </main>
@@ -53,8 +70,8 @@
     <footer>
         <img src="./assets/icons/favicons/android-chrome-512x512.png" alt="">
         <div>
-            <a href="">Impressum</a>
-            <a href="">Datenschutz</a>
+            <a href="./impressum.html">Impressum</a>
+            <a href="./datenschutz.html">Datenschutz</a>
         </div>
     </footer>
 </body>

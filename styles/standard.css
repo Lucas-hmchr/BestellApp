@@ -23,3 +23,11 @@ h2{
 h3{
     font-size: 32px;
 }
+
+.dNone{
+    display: none!important;
+}
+
+.dBlock{
+    display: block;
+}
