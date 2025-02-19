@@ -21,12 +21,10 @@ function renderMenuItems(element) {
 function renderShoppingCart() {
     updateLocalStorage();
     let cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log(cartStorage)
     document.getElementById('orderList').innerHTML = ''
     for (let index = 0; index < cartStorage.length; index++) {
-        const item = cartStorage[index];
-        if (item.amount > 0) {
-            document.getElementById('orderList').innerHTML += shoppingCartTemplate(item);
+        if (cartStorage[index].amount > 0) {
+            document.getElementById('orderList').innerHTML += shoppingCartTemplate(cartStorage[index]);
         }
     }
     if (cart.length === 0) {
@@ -40,24 +38,20 @@ function updateLocalStorage() {
 }
 
 function addOneToCart(itemID, itemCategory) {
-    const cartIndex = cart.findIndex((element) => element.id == itemID)
-    let item = cart[cartIndex]
-    if (cartIndex >= 0) {
-        if (item.amount < 10 && item.amount > 0) {
-            cart[cartIndex].amount++
-            renderShoppingCart();
-        }
+    const existingItem = cart.find(item => item.id == itemID);
+    if (existingItem) {
+      if (existingItem.amount < 10) existingItem.amount++;
     } else {
-        let categoryIndex = dishes.findIndex((element) => element.category == itemCategory)
-        let itemIndex = dishes[categoryIndex].items.findIndex((element) => element.id == itemID)
-        let item = dishes[categoryIndex].items[itemIndex]
-        cart.push(item)
-        item.amount++;
-        renderShoppingCart()
+      const newItem = dishes.find(category => category.category == itemCategory).items.find(item => item.id == itemID);
+      newItem.amount++;
+      cart.push(newItem);
     }
-};
+    renderShoppingCart();
+  }
+  
 
-function removeOneFromCart(itemID, itemCategory) {
+
+function removeOneFromCart(itemID) {
     const cartIndex = cart.findIndex((element) => element.id == itemID)
     let item = cart[cartIndex]
     if (cartIndex >= 0) {
@@ -78,8 +72,6 @@ function deleteCartItem(itemID) {
     cart.splice(cartIndex, 1)
     renderShoppingCart()
 };
-
-//Checkbox
 
 function toggleDeliveryFee() {
     document.getElementById('deliveryFee').classList.toggle('dNone');

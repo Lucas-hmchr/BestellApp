@@ -14,7 +14,7 @@ function menuItemTemplate(item) {
             <p id="itemText${item.name}">${item.description}</p>
         </div>
         <div>
-            <span class="itemPrice" id="itemPrice${item.name}">${item.price}€</span>
+            <span class="itemPrice" id="itemPrice${item.name}">${item.price.toFixed(2)}€</span>
             <button type="button" onclick="addOneToCart(${item.id}, '${item.category}')"><img src="./assets/icons/plus_icon.svg" alt=""></button>
         </div>
     </div>
@@ -34,7 +34,7 @@ function shoppingCartTemplate(item){
                 <img src="./assets/icons/${item.icon}" alt="">
                 <div class="orderListItemInfos">
                     <span>${item.name}</span>
-                    <span class="singleItemPrice">${item.price}€</span>
+                    <span class="singleItemPrice">${item.price.toFixed(2)}€</span>
                 </div>
                 <button class="deleteButton" onclick="deleteCartItem(${item.id})"><img src="./assets/icons/trashcan.svg" alt=""></button>
             </div>
@@ -44,7 +44,7 @@ function shoppingCartTemplate(item){
                     <span id="amount${item.id}">${item.amount}</span>
                     <button onclick="addOneToCart(${item.id},'${item.category}')">+</button>
                 </div>
-                <span class="totalItemPrice" id="itemSum${item.id}">${item.price * item.amount}€</span>
+                <span class="totalItemPrice" id="itemSum${item.id}">${(item.price * item.amount).toFixed(2)}€</span>
             </div>
             <hr>
         </div>

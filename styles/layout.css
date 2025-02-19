@@ -39,6 +39,7 @@ main{
     justify-content: space-between;
     padding: 24px;
     gap: 32px;
+    padding-bottom: 132px;
 }
 
 .orderConfirmation{
