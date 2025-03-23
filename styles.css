@@ -1,33 +1,4 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-:root{
-    --primary-orange: #ff8000;
-}
-
-a{
-    text-decoration: none;
-}
-
-h2{
-    font-size: 40px;
-}
-
-h3{
-    font-size: 32px;
-}
-
-.dNone{
-    display: none!important;
-}
-
-.dBlock{
-    display: block;
-}
+@import url('./styles/content.css');
+@import url('./styles/default.css');
+@import url('./styles/layout.css');
+@import url('./styles/shoppingCart.css');
